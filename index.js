@@ -1,4 +1,5 @@
 var axios = require('axios').default;
+var cors = require('cors');
 var express = require('express');
 var querystring = require('querystring');
 
