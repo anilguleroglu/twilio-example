@@ -6,8 +6,6 @@ var querystring = require('querystring');
 const app = express()
 app.use(express.json());
 
-const app = express();
-
 app.use(cors());
 
 const port = 3000
