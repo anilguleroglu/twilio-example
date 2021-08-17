@@ -1,9 +1,12 @@
 var axios = require('axios').default;
 var express = require('express');
 var querystring = require('querystring');
+var cors = require('cors');
 
 const app = express()
 app.use(express.json());
+app.use(cors());
+
 const port = 3000
 
 app.get('/calls', async (req, res) => {
