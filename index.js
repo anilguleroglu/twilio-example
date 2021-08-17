@@ -1,11 +1,16 @@
 var axios = require('axios').default;
+var cors = require('cors');
 var express = require('express');
 var querystring = require('querystring');
-var cors = require('cors');
 
 const app = express()
 app.use(express.json());
-app.use(cors());
+
+const app = express();
+
+app.use(cors({
+    origin: '*'
+}));
 
 const port = 3000
 
