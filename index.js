@@ -7,7 +7,19 @@ const app = express()
 app.use(express.json());
 
 const app = express();
-app.use(cors({ origin: ['http://localhost:8080', 'https://crm.dev.fowapps.com'] }));
+
+const whitelist = ['http://localhost:8080', 'https://crm.dev.fowapps.com/']
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error())
+    }
+  }
+}
+
+app.use(cors(corsOptions));
 
 const port = 3000
 
