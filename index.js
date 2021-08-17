@@ -4,6 +4,10 @@ var querystring = require('querystring');
 
 const app = express()
 app.use(express.json());
+
+const app = express();
+app.use(cors({ origin: ['http://localhost:8080', 'https://crm.dev.fowapps.com'] }));
+
 const port = 3000
 
 app.get('/calls', async (req, res) => {
